@@ -249,27 +249,17 @@
       margin-bottom: 1rem;
     }
     
-    .btn-search {
-      height: 44px;
-      width: 44px;
-      min-width: 44px;
-      margin-bottom: 1rem; /* Allinea con input-group */
-      border: none;
-      border-radius: 8px;
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      font-size: 1.25rem;
-      cursor: pointer;
-      transition: all 0.2s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .search-link {
+      font-size: 0.7rem;
+      color: var(--green);
+      text-decoration: none;
+      margin-left: 0.5rem;
+      font-weight: 400;
     }
     
-    .btn-search:hover {
-      background: var(--green);
-      border-color: var(--green);
-      transform: scale(1.05);
+    .search-link:hover {
+      text-decoration: underline;
+      color: var(--green-light);
     }
     
     .price-disclaimer {
@@ -644,9 +634,6 @@
       .operator-row .input-group {
         flex: none !important;
       }
-      .btn-search {
-        width: 100%;
-      }
     }
   </style>
 </head>
@@ -817,12 +804,11 @@
               </select>
             </div>
             <div class="input-group" style="flex: 1;">
-              <label class="input-label">Offerta</label>
+              <label class="input-label">Offerta <a href="#" class="search-link" onclick="searchPrices(1); return false;">cerca offerte aggiornate</a></label>
               <select id="offerta1" class="input-field select-field" onchange="onSelectOfferta(1)">
                 <option value="">-- Prima seleziona operatore --</option>
               </select>
             </div>
-            <button type="button" class="btn-search" onclick="searchPrices(1)" title="Verifica prezzi online">🔍</button>
           </div>
           <div class="input-group" id="nome1-group" style="display: none;">
             <label class="input-label">Nome operatore</label>
@@ -912,12 +898,11 @@
               </select>
             </div>
             <div class="input-group" style="flex: 1;">
-              <label class="input-label">Offerta</label>
+              <label class="input-label">Offerta <a href="#" class="search-link" onclick="searchPrices(2); return false;">cerca offerte aggiornate</a></label>
               <select id="offerta2" class="input-field select-field" onchange="onSelectOfferta(2)">
                 <option value="">-- Prima seleziona operatore --</option>
               </select>
             </div>
-            <button type="button" class="btn-search" onclick="searchPrices(2)" title="Verifica prezzi online">🔍</button>
           </div>
           <div class="input-group" id="nome2-group" style="display: none;">
             <label class="input-label">Nome operatore</label>
