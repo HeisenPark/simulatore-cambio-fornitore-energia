@@ -3,7 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Confronto Tariffe Energia</title>
+  
+  <!-- SEO Base -->
+  <title>Simulatore Cambio Operatore Luce | Calcola Risparmio Bolletta</title>
+  <meta name="description" content="Simula il passaggio a un nuovo operatore luce. Calcola quanto risparmieresti con Octopus Energy, Enel, Eni rispetto al tuo fornitore attuale. Gratuito e senza registrazione.">
+  <meta name="keywords" content="simulatore cambio operatore, passaggio fornitore luce, risparmio bolletta, Octopus Energy, Enel, mercato libero, tutele graduali, STG, prezzo kWh">
+  <meta name="author" content="Energia Simulator">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:title" content="Simulatore Cambio Operatore Luce | Quanto Risparmi?">
+  <meta property="og:description" content="Simula il passaggio a un nuovo operatore. Scopri quanto risparmieresti sulla bolletta luce. Gratuito e senza registrazione.">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="Simulatore Energia">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Simulatore Cambio Operatore Luce | Quanto Risparmi?">
+  <meta name="twitter:description" content="Simula il passaggio a un nuovo fornitore luce. Scopri il risparmio annuo.">
+  <meta name="twitter:image" content="">
+  
+  <!-- PWA / Mobile -->
+  <meta name="theme-color" content="#0f172a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Simulatore">
+  
+  <!-- Favicon (emoji fallback) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Simulatore Cambio Operatore Luce",
+    "description": "Simula il passaggio a un nuovo operatore elettrico e calcola il risparmio annuo",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    "featureList": [
+      "Simulazione cambio operatore",
+      "Calcolo risparmio annuo",
+      "Database offerte aggiornato",
+      "Mercato Libero vs STG"
+    ],
+    "inLanguage": "it-IT"
+  }
+  </script>
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -37,6 +94,18 @@
       color: var(--text);
       line-height: 1.5;
       padding: 2rem 1rem;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    
+    /* Allow text selection in input fields */
+    input, select, textarea {
+      -webkit-user-select: text;
+      -moz-user-select: text;
+      -ms-user-select: text;
+      user-select: text;
     }
     
     .container {
@@ -249,17 +318,27 @@
       margin-bottom: 1rem;
     }
     
-    .search-link {
-      font-size: 0.7rem;
-      color: var(--green);
-      text-decoration: none;
-      margin-left: 0.5rem;
-      font-weight: 400;
+    .btn-search {
+      height: 44px;
+      width: 44px;
+      min-width: 44px;
+      margin-bottom: 1rem; /* Allinea con input-group */
+      border: none;
+      border-radius: 8px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      font-size: 1.25rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     
-    .search-link:hover {
-      text-decoration: underline;
-      color: var(--green-light);
+    .btn-search:hover {
+      background: var(--green);
+      border-color: var(--green);
+      transform: scale(1.05);
     }
     
     .price-disclaimer {
@@ -634,6 +713,9 @@
       .operator-row .input-group {
         flex: none !important;
       }
+      .btn-search {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -645,8 +727,8 @@
         <div class="pulse-dot"></div>
         Calcolatore
       </div>
-      <h1><span>Confronto Tariffe</span> Energia</h1>
-      <p class="subtitle">Mercato Libero vs Tutele Graduali</p>
+      <h1><span>Simulatore Cambio</span> Operatore</h1>
+      <p class="subtitle">Quanto risparmieresti cambiando fornitore?</p>
     </header>
 
     <!-- Progress Bar -->
@@ -752,11 +834,11 @@
       </div>
     </div>
 
-    <!-- Step 2: Operatore 1 -->
+    <!-- Step 2: Operatore Attuale -->
     <div class="step" id="step2">
       <div class="card">
-        <h2 class="card-title">🏷️ Operatore 1</h2>
-        <p class="card-subtitle">Seleziona il tipo di mercato</p>
+        <h2 class="card-title">📍 Operatore Attuale</h2>
+        <p class="card-subtitle">Il tuo fornitore attuale</p>
         
         <div class="market-options">
           <div class="market-option libero" id="op1-libero" onclick="selectMarket(1, 'libero')">
@@ -804,11 +886,12 @@
               </select>
             </div>
             <div class="input-group" style="flex: 1;">
-              <label class="input-label">Offerta <a href="#" class="search-link" onclick="searchPrices(1); return false;">cerca offerte aggiornate</a></label>
+              <label class="input-label">Offerta</label>
               <select id="offerta1" class="input-field select-field" onchange="onSelectOfferta(1)">
                 <option value="">-- Prima seleziona operatore --</option>
               </select>
             </div>
+            <button type="button" class="btn-search" onclick="searchPrices(1)" title="Verifica prezzi online">🔍</button>
           </div>
           <div class="input-group" id="nome1-group" style="display: none;">
             <label class="input-label">Nome operatore</label>
@@ -846,11 +929,11 @@
       </div>
     </div>
 
-    <!-- Step 3: Operatore 2 -->
+    <!-- Step 3: Nuovo Operatore -->
     <div class="step" id="step3">
       <div class="card">
-        <h2 class="card-title">🏷️ Operatore 2</h2>
-        <p class="card-subtitle">Seleziona il tipo di mercato</p>
+        <h2 class="card-title">🎯 Nuovo Operatore</h2>
+        <p class="card-subtitle">A chi vorresti passare?</p>
         
         <div class="market-options">
           <div class="market-option libero" id="op2-libero" onclick="selectMarket(2, 'libero')">
@@ -898,11 +981,12 @@
               </select>
             </div>
             <div class="input-group" style="flex: 1;">
-              <label class="input-label">Offerta <a href="#" class="search-link" onclick="searchPrices(2); return false;">cerca offerte aggiornate</a></label>
+              <label class="input-label">Offerta</label>
               <select id="offerta2" class="input-field select-field" onchange="onSelectOfferta(2)">
                 <option value="">-- Prima seleziona operatore --</option>
               </select>
             </div>
+            <button type="button" class="btn-search" onclick="searchPrices(2)" title="Verifica prezzi online">🔍</button>
           </div>
           <div class="input-group" id="nome2-group" style="display: none;">
             <label class="input-label">Nome operatore</label>
@@ -935,15 +1019,15 @@
 
         <div class="btn-row">
           <button class="btn btn-secondary" onclick="goToStep(2)">← Indietro</button>
-          <button class="btn btn-primary" id="btn-step3" onclick="goToStep(4)" disabled>Confronta →</button>
+          <button class="btn btn-primary" id="btn-step3" onclick="goToStep(4)" disabled>Simula →</button>
         </div>
       </div>
     </div>
 
-    <!-- Step 4: Confronto -->
+    <!-- Step 4: Risultato Simulazione -->
     <div class="step" id="step4">
       <div class="card">
-        <h2 class="card-title">📊 Confronto Finale</h2>
+        <h2 class="card-title">📊 Risultato Simulazione</h2>
         
         <div class="result-cards" id="resultCards">
           <!-- Generato da JS -->
@@ -1410,6 +1494,51 @@
       });
       document.getElementById('compareBars').innerHTML = barsHtml;
     }
+    
+    // ========== Anti-Inspection Protection ==========
+    // Disable right-click context menu
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      return false;
+    });
+    
+    // Disable keyboard shortcuts for dev tools
+    document.addEventListener('keydown', function(e) {
+      // F12
+      if (e.key === 'F12') {
+        e.preventDefault();
+        return false;
+      }
+      // Ctrl+Shift+I (Inspect)
+      if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+        e.preventDefault();
+        return false;
+      }
+      // Ctrl+Shift+J (Console)
+      if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+        e.preventDefault();
+        return false;
+      }
+      // Ctrl+Shift+C (Element picker)
+      if (e.ctrlKey && e.shiftKey && e.key === 'C') {
+        e.preventDefault();
+        return false;
+      }
+      // Ctrl+U (View source)
+      if (e.ctrlKey && e.key === 'u') {
+        e.preventDefault();
+        return false;
+      }
+    });
+    
+    // Disable text selection (optional - uncomment if needed)
+    // document.addEventListener('selectstart', function(e) { e.preventDefault(); });
+    
+    // Disable drag
+    document.addEventListener('dragstart', function(e) {
+      e.preventDefault();
+      return false;
+    });
   </script>
 </body>
 </html>

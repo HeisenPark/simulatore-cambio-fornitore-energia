@@ -1,6 +1,6 @@
-# ⚡ Confronto Tariffe Energia
+# ⚡ Simulatore Cambio Operatore Luce
 
-Applicazione web per confrontare tariffe elettriche tra operatori del Mercato Libero e Servizio Tutele Graduali (STG).
+Applicazione web per simulare il passaggio a un nuovo operatore elettrico e calcolare il risparmio annuo.
 
 ## 🚀 Deploy
 
@@ -34,11 +34,13 @@ energia-app/
 
 ## ✨ Funzionalità
 - Wizard guidato in 4 step
+- Simulazione: operatore attuale → nuovo operatore
 - Database offerte con auto-compilazione prezzi
 - Ricerca prezzi online (pulsante 🔍)
-- Confronto Mercato Libero vs STG
-- Calcolo costi annualizzati
+- Supporto Mercato Libero e Tutele Graduali (STG)
+- Calcolo risparmio annualizzato
 - Design responsive
+- SEO ottimizzato (meta tags, Open Graph, Schema.org)
 
 ## 📊 Dati utilizzati
 I prezzi delle offerte sono indicativi (dicembre 2025) e potrebbero variare.
