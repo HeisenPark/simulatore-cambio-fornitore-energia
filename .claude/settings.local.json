@@ -10,7 +10,8 @@
       "Bash(git add:*)",
       "Bash(git commit -m \"$(cat <<''EOF''\nUpdate README with detailed documentation\n\n- Add complete project structure including docs folder\n- Document calculation formula with all cost components\n- Add ARERA parameters table with default values\n- List all 23 supported energy operators\n- Add technology stack, SEO/PWA features, and local dev instructions\n- Include disclaimer about indicative prices\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n)\")",
       "Bash(git push:*)",
-      "Bash(git commit -m \"$(cat <<''EOF''\nFix URLs to new repository path\n\n- Update canonical URL to simulatore-cambio-fornitore-energia\n- Update Open Graph URL\n- Update sitemap.xml location\n- Update robots.txt sitemap reference\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n)\")"
+      "Bash(git commit -m \"$(cat <<''EOF''\nFix URLs to new repository path\n\n- Update canonical URL to simulatore-cambio-fornitore-energia\n- Update Open Graph URL\n- Update sitemap.xml location\n- Update robots.txt sitemap reference\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git commit:*)"
     ]
   }
 }
