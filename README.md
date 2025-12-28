@@ -7,7 +7,6 @@ Applicazione web per simulare il passaggio a un nuovo operatore elettrico e calc
 ```
 simulatore-cambio-fornitore-energia/
 ├── index.html              # Applicazione completa (HTML + CSS + JS)
-├── netlify.toml            # Configurazione Netlify (headers sicurezza)
 ├── robots.txt              # Configurazione SEO crawler
 ├── sitemap.xml             # Mappa del sito
 ├── README.md               # Documentazione
